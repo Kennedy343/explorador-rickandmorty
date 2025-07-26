@@ -10,9 +10,10 @@ Esta es una aplicación de una sola página que permite buscar y visualizar pers
 
 ## 🌐 Visualización en línea
 
-La aplicación está alojada en **GitHub Pages**, por lo que puedes verla directamente desde tu navegador.
+La aplicación está alojada en **GitHub Pages**, por lo que puedes verla directamente desde tu navegador:
 
-📎 **Enlace al sitio web:**
+📎 **Enlace al sitio web:**  
+👉 [https://kennedy343.github.io/explorador-rickandmorty/](https://kennedy343.github.io/explorador-rickandmorty/)
 
 ## 🚀 Cómo ver el proyecto localmente
 
