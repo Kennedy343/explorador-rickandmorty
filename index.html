@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rick and Morty Explorer</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-900 to-green-600 text-white font-sans">
+
+  <header class="text-center py-8">
+    <h1 class="text-4xl font-bold">Rick and Morty Explorer</h1>
+    <p class="text-sm mt-2 text-green-200">Busca personajes por nombre, estado y género</p>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4">
+    <!-- Filtros -->
+    <section class="mb-6 grid md:grid-cols-4 gap-4">
+      <input type="text" id="searchInput" placeholder="Buscar por nombre..." class="px-4 py-2 rounded-md bg-white/20 text-white placeholder-white/70" />
+
+      <select id="statusFilter" class="px-4 py-2 rounded-md bg-white/20 text-white appearance-none">
+  <option value="" class="bg-green-900 text-white">Todos los estados</option>
+  <option value="alive" class="bg-green-900 text-white">Alive</option>
+  <option value="dead" class="bg-green-900 text-white">Dead</option>
+  <option value="unknown" class="bg-green-900 text-white">Unknown</option>
+</select>
+
+<select id="genderFilter" class="px-4 py-2 rounded-md bg-white/20 text-white appearance-none">
+  <option value="" class="bg-green-900 text-white">Todos los géneros</option>
+  <option value="female" class="bg-green-900 text-white">Female</option>
+  <option value="male" class="bg-green-900 text-white">Male</option>
+  <option value="genderless" class="bg-green-900 text-white">Genderless</option>
+  <option value="unknown" class="bg-green-900 text-white">Unknown</option>
+</select>
+
+      <button id="searchBtn" class="bg-green-700 hover:bg-green-800 px-4 py-2 rounded-md transition">Buscar</button>
+    </section>
+
+    <!-- Estado de carga o mensajes -->
+    <!-- Loader + mensaje -->
+<div id="message" class="flex justify-center items-center gap-2 my-4 hidden">
+  <div class="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+  <span class="text-yellow-300 font-medium">Cargando...</span>
+</div>
+
+
+
+    <!-- Tarjetas -->
+    <section id="charactersContainer" class="grid md:grid-cols-3 gap-6"></section>
+
+    <!-- Paginación -->
+    <div class="flex justify-center mt-8 gap-4">
+      <button id="prevBtn" class="bg-green-700 hover:bg-green-800 px-4 py-2 rounded-md disabled:opacity-50">Anterior</button>
+      <button id="nextBtn" class="bg-green-700 hover:bg-green-800 px-4 py-2 rounded-md disabled:opacity-50">Siguiente</button>
+    </div>
+  </main>
+
+  <!-- Alerta flotante -->
+<div id="toast" class="fixed bottom-6 right-6 bg-red-600 text-white px-4 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  <span id="toastMsg">Ocurrió un error</span>
+</div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
